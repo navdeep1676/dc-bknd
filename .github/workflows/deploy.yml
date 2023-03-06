@@ -21,6 +21,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
-          key: ${{ secrets.SSHKEY }}
+          key: "Y&HuQC*9o9"
           script: "cd /var/www/dcapi && ./.scripts/deploy.sh"
 
