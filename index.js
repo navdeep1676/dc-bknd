@@ -6,7 +6,7 @@ const connectDb = async () => {
 console.log("I ran")
   try {
     await mongoose.connect('mongodb://navdeep:monu1676@127.0.0.1:27017/dc')
-    console.log("conneected db")
+    console.log("conneected db successfully")
   } catch (error) {
     console.log(error.message)
   }
