@@ -16,5 +16,5 @@ app.get("/",(req,res)=>{
 res.send("welcome to api")
 })
 app.listen(4000,()=>{
-console.log("Server is Running")
+console.log("Server is Running 5000")
 })
