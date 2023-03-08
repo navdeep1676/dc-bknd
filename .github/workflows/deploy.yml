@@ -16,6 +16,9 @@ jobs:
     
     - name: Copy Files
       run: rsync -a /root/actions-runner/_work/dc-bknd/dc-bknd /var/www/dcapi/
+      
+    - name: Install Depencdencies
+      run: npm install --prefix /var/www/dcapi
     
     - name: Give Permission
       run: chmod -R 775 /var/www/dcapi/
