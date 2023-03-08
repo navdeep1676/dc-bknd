@@ -13,6 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Copy Files
+      run: rsync -a oot/actions-runner/_work/dc-bknd/dc-bknd /var/www/dcapi/
+    
+    - name: Give Permission
+      run: chmod -R 775 /var/www/dcapi/
 
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
