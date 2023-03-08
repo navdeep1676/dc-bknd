@@ -12,8 +12,8 @@ const connectDb = async () => {
 };
 connectDb();
 app.get("/", (req, res) => {
-  res.send("welcome to api pipeline");
+  res.send("welcome to api pipeline dc");
 });
 app.listen(4000, () => {
-  console.log("Server is Running on PORT 5000");
+  console.log("Server is Running on PORT this 5000");
 });
