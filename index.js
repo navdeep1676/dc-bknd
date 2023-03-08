@@ -13,7 +13,7 @@ console.log("I gdg  gdfg dfran gfdg fd")
 }
 connectDb()
 app.get("/",(req,res)=>{
-res.send("welcome to apiss")
+res.send("welcome to api pipeline")
 })
 app.listen(4000,()=>{
 console.log("Server is Running 5000")
