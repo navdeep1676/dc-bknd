@@ -1,19 +1,15 @@
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
-const connectDb = async () => {
-  console.log("I gdg  gdfg dfran gfdg fd");
-  try {
-    await mongoose.connect("mongodb://navdeep:monu1676@127.0.0.1:27017/dc");
-    console.log("conneected db successfully");
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+const connectDb = require("./config/dbConnect");
+const contactRoute = require("./routes/contactRoute");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 connectDb();
-app.get("/", (req, res) => {
-  res.send("welcome to api pipeline dc");
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
+
+app.use("/v1/contact", contactRoute);
 app.listen(4000, () => {
-  console.log("Server is Running on PORT this 5000");
+  console.log("Server is Running on PORT this 4000");
 });
