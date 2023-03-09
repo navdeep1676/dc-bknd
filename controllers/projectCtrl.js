@@ -1,86 +1,86 @@
-const Video = require("../models/videoModel");
+const Project = require("../models/ProjectModel");
 const slugify = require("slugify");
 
-const postVideo = async (req, res) => {
+const postProject = async (req, res) => {
   try {
     if (req.body.title) {
       req.body.slug = slugify(req.body.title.toLowerCase());
     }
-    const postVideoData = await Video.create(req.body);
+    const postProjectData = await Project.create(req.body);
     res.json({
       status: true,
-      code: "VIDEO_SUBMITTED",
-      msg: "Video Uploaded Successfully!",
-      data: postVideoData,
+      code: "PROJECT_SUBMITTED",
+      msg: "Project Uploaded Successfully!",
+      data: postProjectData,
     });
   } catch (error) {
     res.json({
       status: false,
-      code: "VIDEO_FAILED",
+      code: "PROJECT_FAILED",
       msg: "Something went wrong! Please contact the site administrator.",
       error: error,
     });
   }
 };
-const getAVideo = async (req, res) => {
+const getAProject = async (req, res) => {
   const { slug } = req.params;
   try {
-    const getAVideoData = await Video.findOne({ slug: slug });
+    const getAProjectData = await Project.findOne({ slug: slug });
     res.json({
       status: true,
-      code: "VIDEO_FOUND",
-      msg: "Video Found Successfully!",
-      data: getAVideoData,
+      code: "PROJECT_FOUND",
+      msg: "Project Found Successfully!",
+      data: getAProjectData,
     });
   } catch (error) {
     res.json({
       status: false,
-      code: "VIDEO_NOT_FAILED",
+      code: "PROJECT_NOT_FAILED",
       msg: "Something went wrong! Please contact the site administrator.",
       error: error,
     });
   }
 };
-const getAllVideo = async (req, res) => {
+const getAllProject = async (req, res) => {
   try {
-    const getAllVideoData = await Video.find();
+    const getAllProjectData = await Project.find();
     res.json({
       status: true,
-      code: "VIDEOS_FOUND",
-      msg: "Videos Found Successfully!",
-      data: getAllVideoData,
+      code: "PROJECT_FOUND",
+      msg: "Projects Found Successfully!",
+      data: getAllProjectData,
     });
   } catch (error) {
     res.json({
       status: false,
-      code: "VIDEOS_NOT_FOUND",
+      code: "PROJECT_NOT_FOUND",
       msg: "Something went wrong! Please contact the site administrator.",
       error: error,
     });
   }
 };
-const deleteAVideo = async (req, res) => {
+const deleteAProject = async (req, res) => {
   const { id } = req.params;
   try {
-    const deleteVideo = await Video.findByIdAndDelete(id);
+    const deleteProject = await Project.findByIdAndDelete(id);
     res.json({
       status: true,
-      code: "VIDEOS_DELETED",
-      msg: "Video Deleted Successfully!",
-      data: deleteVideo,
+      code: "PROJECT_DELETED",
+      msg: "Project Deleted Successfully!",
+      data: deleteProject,
     });
   } catch (error) {
     res.json({
       status: false,
-      code: "VIDEOS_NOT_DELETED",
+      code: "PROJECT_NOT_DELETED",
       msg: "Something went wrong! Please contact the site administrator.",
       error: error,
     });
   }
 };
 module.exports = {
-  postVideo,
-  getAVideo,
-  getAllVideo,
-  deleteAVideo,
+  postProject,
+  getAProject,
+  getAllProject,
+  deleteAProject,
 };

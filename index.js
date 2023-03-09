@@ -3,6 +3,7 @@ const app = express();
 const connectDb = require("./config/dbConnect");
 const contactRoute = require("./routes/contactRoute");
 const videoRoute = require("./routes/videoRoute");
+const projectRoute = require("./routes/projectRoute");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 connectDb();
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 });
 app.use("/v1/contact", contactRoute);
 app.use("/v1/video", videoRoute);
+app.use("/v1/project", projectRoute);
 app.listen(4000, () => {
   console.log("Server is Running on PORT this 4000");
 });
