@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.get("/", (req, res) => {
-  res.send("hello from server");
+  res.send("hello from server Side");
 });
 app.use("/v1/contact", contactRoute);
 app.use("/v1/video", videoRoute);
