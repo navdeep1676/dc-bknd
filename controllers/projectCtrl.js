@@ -1,4 +1,4 @@
-const Project = require("../models/ProjectModel");
+const Project = require("../models/projectModel");
 const slugify = require("slugify");
 
 const postProject = async (req, res) => {
