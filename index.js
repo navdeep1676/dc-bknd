@@ -8,9 +8,10 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 connectDb();
+app.use(cors());
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors());
 app.get("/", (req, res) => {
   res.send("Welcome to Server Side");
 });
