@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.get("/", (req, res) => {
-  res.send("hello from server Side");
+  res.send("hello from Nourin");
 });
 app.use("/v1/contact", contactRoute);
 app.use("/v1/video", videoRoute);
