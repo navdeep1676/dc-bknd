@@ -6,6 +6,7 @@ const videoRoute = require("./routes/videoRoute");
 const projectRoute = require("./routes/projectRoute");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+require("dotenv").config();
 connectDb();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

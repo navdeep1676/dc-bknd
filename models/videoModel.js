@@ -17,7 +17,7 @@ var videoSchema = new mongoose.Schema(
       required: true,
     },
     image: {
-      type: String,
+      type: {},
       required: true,
     },
     url: {

@@ -5,9 +5,10 @@ const {
   getAllVideo,
   deleteAVideo,
 } = require("../controllers/videoCtrl");
+const { videoImgResize, uploadPhoto } = require("../middlewares/uploadImage");
 const router = express.Router();
 
-router.post("/post", postVideo);
+router.post("/post", uploadPhoto.single("image"), videoImgResize, postVideo);
 router.get("/", getAllVideo);
 router.get("/:slug", getAVideo);
 router.delete("/:id", deleteAVideo);
