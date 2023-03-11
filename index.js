@@ -11,11 +11,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.get("/", (req, res) => {
-  res.send("hello from Nourin");
+  res.send("Welcome to Server Side");
 });
 app.use("/v1/contact", contactRoute);
 app.use("/v1/video", videoRoute);
 app.use("/v1/project", projectRoute);
 app.listen(4000, () => {
-  console.log("Server is Running on PORT this 4000");
+  console.log("Server is Running on PORT 4000");
 });
