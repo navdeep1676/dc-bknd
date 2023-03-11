@@ -24,6 +24,7 @@ const postVideo = async (req, res) => {
       code: "VIDEO_FAILED",
       msg: "Something went wrong! Please contact the site administrator.",
       error: error,
+      newerror: newpath,
     });
   }
 };
