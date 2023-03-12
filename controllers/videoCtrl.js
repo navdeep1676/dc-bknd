@@ -19,12 +19,7 @@ const postVideo = async (req, res) => {
       data: postVideoData,
     });
   } catch (error) {
-    res.json({
-      status: false,
-      code: "VIDEO_FAILED",
-      msg: "Something went wrong! Please contact the site administrator.",
-      error: error,
-    });
+    console.log(error);
   }
 };
 const getAVideo = async (req, res) => {
