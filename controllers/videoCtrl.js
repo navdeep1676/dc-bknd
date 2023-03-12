@@ -10,7 +10,7 @@ const postVideo = async (req, res) => {
     req.body.image = newpath;
     fs.unlinkSync(req.file.path);
     if (req.body.title) {
-      req.body.slug = slugify(req.body.title);
+      req.body.slug = slugify(req.body.title.toLowerCase());
     }
     const postVideoData = await Video.create(req.body);
     res.json({
