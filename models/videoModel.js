@@ -23,6 +23,10 @@ var videoSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    summary: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
