@@ -4,10 +4,10 @@ const { cloudinaryUploadImg } = require("../utils/cloudinary");
 const fs = require("fs");
 const postVideo = async (req, res) => {
   try {
-    const uploader = (path) => cloudinaryUploadImg(path, "images");
+    /* const uploader = (path) => cloudinaryUploadImg(path, "images");
     const newpath = await uploader(req.file.path);
-    req.body.image = newpath;
-    fs.unlinkSync(req.file.path);
+    req.body.image = newpath; */
+    /*    fs.unlinkSync(req.file.path); */
     if (req.body.title) {
       req.body.slug = slugify(req.body.title);
     }
