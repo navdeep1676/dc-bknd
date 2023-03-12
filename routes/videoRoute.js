@@ -8,7 +8,7 @@ const {
 const { videoImgResize, uploadPhoto } = require("../middlewares/uploadImage");
 const router = express.Router();
 
-router.post("/post", postVideo);
+router.post("/post", uploadPhoto.single("images"), videoImgResize, postVideo);
 router.get("/", getAllVideo);
 router.get("/:slug", getAVideo);
 router.delete("/:id", deleteAVideo);

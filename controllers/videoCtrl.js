@@ -3,21 +3,20 @@ const slugify = require("slugify");
 const { cloudinaryUploadImg } = require("../utils/cloudinary");
 const fs = require("fs");
 const postVideo = async (req, res) => {
-  console.log(req.body);
   try {
-    /* const uploader = (path) => cloudinaryUploadImg(path, "images");
+    const uploader = (path) => cloudinaryUploadImg(path, "images");
     const newpath = await uploader(req.file.path);
-    req.body.image = newpath; */
-    /*    fs.unlinkSync(req.file.path); */
+    req.body.image = newpath;
+    fs.unlinkSync(req.file.path);
     if (req.body.title) {
       req.body.slug = slugify(req.body.title);
     }
-    /* const postVideoData = await Video.create(req.body); */
+    const postVideoData = await Video.create(req.body);
     res.json({
       status: true,
       code: "VIDEO_SUBMITTED",
       msg: "Video Uploaded Successfully!",
-      /*  data: postVideoData, */
+      data: postVideoData,
     });
   } catch (error) {
     console.log(error);
